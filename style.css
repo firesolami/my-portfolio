@@ -307,6 +307,7 @@ section {
   align-self: flex-start;
 }
 
+
 .section-container {
   gap: 4rem;
   height: 80%;
@@ -322,6 +323,38 @@ section {
 
 #experience {
   position: relative;
+  height: auto;
+  min-height: 100vh;
+  padding-bottom: 5rem;
+}
+
+.experience-details-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.about-containers {
+  display: flex;
+  flex-direction: row;  /* Changed from column to row */
+  gap: 2rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.details-container {
+  padding: 1.5rem;
+  flex: 1;
+  background: white;
+  border-radius: 2rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(163, 163, 163);
+  text-align: center;
+}
+
+.details-container.frontend,
+.details-container.backend {
+  width: calc(50% - 1rem);  /* Set width to 50% minus half of the gap */
 }
 
 .experience-sub-title {
@@ -331,25 +364,18 @@ section {
   margin-bottom: 2rem;
 }
 
-.experience-details-container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
 .article-container {
   display: flex;
-  text-align: center;
   flex-wrap: wrap;
-  flex-direction: row;
   gap: 2.5rem;
-  justify-content: space-between;
+  justify-content: left;
 }
 
 article {
   display: flex;
   width: 10rem;
-  justify-content: space;
+  justify-content: flex-start;
+  align-items: center;
   gap: 0.5rem;
 }
 
@@ -357,11 +383,20 @@ article .icon {
   cursor: default;
 }
 
+/* Adjust the arrow position */
+#experience .arrow {
+  position: absolute;
+  right: -5rem;
+  bottom: 2.5rem;
+}
 
 /* PROJECTS SECTION */
 
 #projects {
   position: relative;
+  height: auto;
+  min-height: 100vh;
+  padding-top: 5rem;
 }
 
 .color-container {
@@ -383,6 +418,30 @@ article .icon {
 .project-btn {
   color: black;
   border-color: rgb(163, 163, 163);
+}
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.details-container.color-container {
+  width: calc(50% - 1rem);
+  min-width: 300px;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .details-container.color-container {
+    width: 100%;
+  }
+}
+
+#projects {
+  height: auto;
+  min-height: 100vh;
 }
 
 /* CONTACT */
