@@ -366,9 +366,11 @@ section {
 
 .article-container {
   display: flex;
+  text-align: initial;
   flex-wrap: wrap;
+  flex-direction: row;
   gap: 2.5rem;
-  justify-content: left;
+  justify-content: space-around;
 }
 
 article {
@@ -429,7 +431,7 @@ article .icon {
 
 .details-container.color-container {
   width: calc(50% - 1rem);
-  min-width: 300px;
+  min-width: 270px;
   margin-bottom: 2rem;
 }
 
