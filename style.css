@@ -170,6 +170,7 @@ section {
 }
 
 .section__pic-container {
+  position: relative;
   display: flex;
   height: 400px;
   width: 400px;
@@ -197,6 +198,65 @@ section {
 .title {
   font-size: 3rem;
   text-align: center;
+}
+
+.thought-bubble {
+  position: absolute;
+  top: -60px; 
+  right: -90px; 
+  width: 150px; 
+  height: 150px;
+  background: rgb(255, 255, 255);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1; 
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.thought-bubble.visible {
+  opacity: 1;
+}
+
+.thought-bubble::before {
+  content: '';
+  position: absolute;
+  bottom: -10px; 
+  right: 45px; 
+  width: 25px; 
+  height: 25px;
+  background: rgb(255, 255, 255);
+  border: 1px solid black;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.thought-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -25px;
+  right: 60px;  
+  width: 15px;
+  height: 15px;
+  background: rgb(255, 255, 255);
+  border: 1px solid black;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.thought-bubble img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: none; 
+}
+
+.thought-bubble img.playing {
+  display: block;
 }
 
 #socials-container {
